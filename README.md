@@ -52,6 +52,9 @@ By using excels power query I will break down the rows within the columns such t
 
 Next I will remove unnecessary columns that don't require breaking down or transforming as they may cause the data transformation to process slower, therefore columns other than the product_id, user_name, user_id or review_id will be removed and added later on.
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%202.png)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%203.png)
+
 (insert snippet PQ transformation 2 & 3)
 
 Next I will split the user_name, user_id and review_id columns via delimiter (delimiters are characters that separate words e.g , or . ) which will be the commas in this instance.
