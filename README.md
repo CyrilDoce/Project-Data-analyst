@@ -1,6 +1,6 @@
 # Project-Data-analyst
 
-# Cleaning using Excel (Data Cleaning - Excel and SQL server.xlsc) :
+# Cleaning using Excel (Data Cleaning - Excel and SQL server.xlsx) :
 
 # Check for duplicated values
 Highlight the entire table and hover over data at the top and click "remove duplicates" under the data tools 
