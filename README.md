@@ -1,6 +1,6 @@
 # Project-Data-analyst
 
-# Cleaning using Excel:
+# Cleaning using Excel (Data Cleaning - Excel and SQL server.xlsc) :
 
 # Check for duplicated values
 Highlight the entire table and hover over data at the top and click "remove duplicates" under the data tools 
@@ -39,8 +39,8 @@ I will insert a new field "Check_discounted_price" in order to see if they accur
 
 This is to ensure the entire column is formatted as a value and not a formula of the actual price column
 
-user_name and review_id 
-This column is slightly complicated as there are multiple user_names and review_id values within their respective
+# user_name and review_id 
+These column are slightly complicated as there are multiple user_names and review_id values within their respective
 column. As a result this isn't a normalised data set that can be used for later querying within SQL, therefore
 I have to split the usernames within each of their own product ids and review_id rows.
 
