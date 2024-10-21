@@ -70,49 +70,47 @@ This will lead into multiple instances of user_id, review_id and user_name colum
 Within a table are attributes (columns) and values (multiple rows). Unpivotting allows for the attributes to be stored in a singular column with the values also stored in a singular column corresponding to eachother. This may be useful in instances where there are too many of similar columns being referenced in a table, which may be better to store as rows. For example, user_id.1, user_id.2,user_id.3 etc would be better stored as one singular column: user_id. 
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/Explain%20how%20unpivotting%20work.png)
-(insert explain 1)
+
 
 In this instance I will have to unpivot these columns into one singular column with multiple rows known as the attributes, simultaneously having the "values" being held in another singular column. This distinction allows each product to have user_names, user_ids and review_ids correspond to the values whilst not being mashed together as an array in one column. As a result, it is normalised.
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/Explain%20how%20unpivotting%20work%202.png)
 
-(insert explain 2 )
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%208.png)
 
-(insert snippet PQ transformation 8)
 
-Within the attribute column we have user_ids, user_names and review_ids for each product with a number assigned to each. Each number represents the columns that contain values corresponding to each product id.
+Within the attribute column there are user_ids, user_names and review_ids for each product with a number assigned to each. Each number represents a group of values belonging to each product id.
 
 # How group by works
 This feature is similar to the group by statement used in sql where values that match a group are "aggregated" together using count, sum,avg etc. Aggregations calculate across multiple rows based on groups in order to output one value for that group. In this instance I am not trying to "aggregate" in order to find a singular value, but to group rows within a nested table.
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/How%20to%20group%20by.png)
-(insert group by snipp )
+
 
 Using the split by delimiter once more I need to separate the numbers to a distinct column named "index". This instance I will split via "." instead of ",".
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%209.png)
-(insert snippet PQ transformation 9)
-->
+
+------->
+
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2010.png)
-(insert snippet PQ transformation 10)
+
 
 Next, I will use the group by feature within excel to group every unique combination of product_id and the index, this will allow me to group review_id, user_id and user_name into their respective group number within their respective product_id. 
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2011.png)
-(insert snippet PQ transformation 11)
 
 
 The values would be stored within a nested table.
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2012.png)
-(insert snippet PQ transformation 12)
 
-Next, I will need to expand the table to show the "attributes" and "values" of the nested tables. These contain every column combination containing the values that go under each column
+
+Next, I will need to expand the table to show the "attributes" and "values" of the nested tables. These contain every column combination containing the values that go under each column e.g user_name, user_id and review_id.
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2013.png)
-(insert snippet PQ transformation 13)
+
 
 # How the pivot works
 Pivotting enables the row values within a column to be transformed into multiple columns to increase readability. It is the opposite of unpivotting where rows within multiple columns are transformed into singular columns alongside the values. 
