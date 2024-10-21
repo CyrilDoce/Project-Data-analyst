@@ -48,7 +48,7 @@ I have to split the usernames within each of their own product ids and review_id
 
 By using excels power query I will break down the rows within the columns such that they are all individually part of their own respective product id and normalised. Right now there are multiple values within user_name, user_id and review_id.
 
-https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%201.png?raw=true
+[https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%201.png?raw=true](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%201.png?raw=true)
 
 Next I will remove unnecessary columns that don't require breaking down or transforming as they may cause the data transformation to process slower, therefore columns other than the product_id, user_name, user_id or review_id will be removed and added later on.
 
