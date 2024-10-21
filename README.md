@@ -117,6 +117,10 @@ Next, I will need to expand the table to show the "attributes" and "values" of t
 # How the pivot works
 Pivotting enables the row values within a column to be transformed into multiple columns to increase readability. It is the opposite of unpivotting where rows within multiple columns are transformed into singular columns alongside the values. 
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/How%20pivotting%20works.png)
+
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/Explain%20how%20unpivotting%20work%202.png)
+
 Finally, using the pivot feature I need to transform the values under the "attribute" column to be stored as the final columns having the "values" column remain .
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2014.png)
