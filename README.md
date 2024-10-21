@@ -177,8 +177,7 @@ to write the conversion and drag the formula down to apply it for all rows
 By selecting the data and creating pivot tables I will be able to extract meaningful insights into the data that
 may be useful for stakeholders .
 
-
-(check excel data analysis spreadsheet)
+(check excel data analysis spreadsheet named "FinalProductTable")
 
 FinalProductTable.xlsx -> Data analysis
 
