@@ -67,14 +67,20 @@ This will lead into multiple instances of user_id, review_id and user_name colum
 
 Within a table are attributes (columns) and values (multiple rows). Unpivotting allows for the attributes to be stored in a singular column with the values also stored in a singular column corresponding to eachother. This may be useful in instances where there are too many of similar columns being referenced in a table, which may be better to store as rows. For example, user_id.1, user_id.2,user_id.3 etc would be better stored as one singular column: user_id. 
 
+(insert explain 1)
 
-I will have to unpivot these columns into one singular column with multiple rows known as the attributes, simultaneously having the "values" being held in another singular column. This distinction allows each product to have user_names, user_ids and review_ids correspond to the values whilst not being mashed together as an array in one column. As a result, it is normalised.
+In this instance I will have to unpivot these columns into one singular column with multiple rows known as the attributes, simultaneously having the "values" being held in another singular column. This distinction allows each product to have user_names, user_ids and review_ids correspond to the values whilst not being mashed together as an array in one column. As a result, it is normalised.
+
+(insert explain 2 )
 
 (insert snippet PQ transformation 8)
 
 Within the attribute column we have user_ids, user_names and review_ids for each product with a number assigned to each. Each number represents the columns that contain values corresponding to each product id.
 
-#Explain using example how each number represents groups of items within a product id
+# How group by works
+This feature is similar to the group by statement used in sql where values that match a group are "aggregated" together using count, sum,avg etc. Aggregations calculate across multiple rows based on groups in order to output one value for that group. In this instance I am not trying to "aggregate" in order to find a singular value, but to group rows within a nested table.
+
+(insert group by snipp )
 
 Using the split by delimiter once more I need to separate the numbers to a distinct column named "index". This instance I will split via "." instead of ",".
 
@@ -97,7 +103,8 @@ Next, I will need to expand the table to show the "attributes" and "values" of t
 
 (insert snippet PQ transformation 13)
 
-#Explain how the pivot works
+# How the pivot works
+Pivotting enables the row values within a column to be transformed into multiple columns to increase readability. It is the opposite of unpivotting where rows within multiple columns are transformed into singular columns alongside the values. 
 
 Finally, using the pivot feature I need to transform the values under the "attribute" column to be stored as the final columns having the "values" column remain .
 
@@ -128,7 +135,7 @@ rating_count
 
 (insert snippet Join pq and clean 1&2)
 
-/Create the final table 
+# Create the final table 
 
 Finally, I need to create the table with both joins and export the table in order to use it for data analysis within excel. 
 
