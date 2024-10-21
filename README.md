@@ -55,26 +55,30 @@ Next I will remove unnecessary columns that don't require breaking down or trans
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%202.png)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%203.png)
 
-(insert snippet PQ transformation 2 & 3)
-
 Next I will split the user_name, user_id and review_id columns via delimiter (delimiters are characters that separate words e.g , or . ) which will be the commas in this instance.
 
-
-(insert snippet PQ transformation 4)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20Transform%204.png)
 
 This will lead into multiple instances of user_id, review_id and user_name columns with their respective values
 
-(insert snippet PQ transformation 5&6&7)
-
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%205.png)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%206.png)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%207.png)
+/
 # How unpivotting works
 
 Within a table are attributes (columns) and values (multiple rows). Unpivotting allows for the attributes to be stored in a singular column with the values also stored in a singular column corresponding to eachother. This may be useful in instances where there are too many of similar columns being referenced in a table, which may be better to store as rows. For example, user_id.1, user_id.2,user_id.3 etc would be better stored as one singular column: user_id. 
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/Explain%20how%20unpivotting%20work.png)
 (insert explain 1)
 
 In this instance I will have to unpivot these columns into one singular column with multiple rows known as the attributes, simultaneously having the "values" being held in another singular column. This distinction allows each product to have user_names, user_ids and review_ids correspond to the values whilst not being mashed together as an array in one column. As a result, it is normalised.
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/Explain%20how%20unpivotting%20work%202.png)
+
 (insert explain 2 )
+
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%208.png)
 
 (insert snippet PQ transformation 8)
 
@@ -83,27 +87,31 @@ Within the attribute column we have user_ids, user_names and review_ids for each
 # How group by works
 This feature is similar to the group by statement used in sql where values that match a group are "aggregated" together using count, sum,avg etc. Aggregations calculate across multiple rows based on groups in order to output one value for that group. In this instance I am not trying to "aggregate" in order to find a singular value, but to group rows within a nested table.
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/How%20to%20group%20by.png)
 (insert group by snipp )
 
 Using the split by delimiter once more I need to separate the numbers to a distinct column named "index". This instance I will split via "." instead of ",".
 
-
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%209.png)
 (insert snippet PQ transformation 9)
 ->
-
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2010.png)
 (insert snippet PQ transformation 10)
 
 Next, I will use the group by feature within excel to group every unique combination of product_id and the index, this will allow me to group review_id, user_id and user_name into their respective group number within their respective product_id. 
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2011.png)
 (insert snippet PQ transformation 11)
 
 
 The values would be stored within a nested table.
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2012.png)
 (insert snippet PQ transformation 12)
 
 Next, I will need to expand the table to show the "attributes" and "values" of the nested tables. These contain every column combination containing the values that go under each column
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2013.png)
 (insert snippet PQ transformation 13)
 
 # How the pivot works
@@ -111,11 +119,13 @@ Pivotting enables the row values within a column to be transformed into multiple
 
 Finally, using the pivot feature I need to transform the values under the "attribute" column to be stored as the final columns having the "values" column remain .
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2014.png)
 (insert snippet PQ transformation 14)
 
 This is to ensure that values such as user_id, user_name and review_id are "fields"/ "columns" that can be identified by SQL later on, simultaneously having every value corresponding within each column remain such as 
 "Manav" as username . 
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2015.png)
 (insert snippet PQ transformation 15)
 
 
@@ -123,6 +133,7 @@ This is to ensure that values such as user_id, user_name and review_id are "fiel
 
 After importing the data from power query I must further clean the data. For instance, I need to remove any rows that have null values within the user_id, user_name and review_id column as they are too vague to be considered useful for later analysis.
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/CHECK%20DUPLICATED%20data%20within%20clean%20table.png)
 (insert snippet check duplicated data ) 
 
 In addition I need to remove any duplicated data within sql 
@@ -136,6 +147,8 @@ check_discounted_price,
 discount_percentagerating, 
 rating_count
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/JOIN%20CLEAN%20AND%20PQ%201.png)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/JOIN%20CLEAN%20AND%20PQ%202.png)
 (insert snippet Join pq and clean 1&2)
 
 # Create the final table 
@@ -145,6 +158,9 @@ Finally, I need to create the table with both joins and export the table in orde
 # Data analysis using excel:
 
 After importing the data there seems to be erroneous data for the pricing of the products. For example for a usb charger it is priced at 1099, which seems out of place for the product. 
+
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/conversion%201.png?raw=true)
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/conversion%202.png?raw=true)
 
 (insert rupees price)
 
@@ -156,12 +172,16 @@ currency, GBP, in order for it to make sense.
 As of writing this project the exchange rate for rupees to GBP is 1:0.0091, therefore I will use excel formulas
 to write the conversion and drag the formula down to apply it for all rows
 
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/convertingColumn1.png)
+
+![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/convertingColumn2.png)
 (insert converting column 1&2)
 
 # Creating pivot tables
 
 By selecting the data and creating pivot tables I will be able to extract meaningful insights into the data that
 may be useful for stakeholders .
+
 
 (check excel data analysis spreadsheet)
 
