@@ -120,13 +120,12 @@ Pivotting enables the row values within a column to be transformed into multiple
 Finally, using the pivot feature I need to transform the values under the "attribute" column to be stored as the final columns having the "values" column remain .
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2014.png)
-(insert snippet PQ transformation 14)
+
 
 This is to ensure that values such as user_id, user_name and review_id are "fields"/ "columns" that can be identified by SQL later on, simultaneously having every value corresponding within each column remain such as 
 "Manav" as username . 
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%2015.png)
-(insert snippet PQ transformation 15)
 
 
 # Cleaning using SQL server:
@@ -134,7 +133,6 @@ This is to ensure that values such as user_id, user_name and review_id are "fiel
 After importing the data from power query I must further clean the data. For instance, I need to remove any rows that have null values within the user_id, user_name and review_id column as they are too vague to be considered useful for later analysis.
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/CHECK%20DUPLICATED%20data%20within%20clean%20table.png)
-(insert snippet check duplicated data ) 
 
 In addition I need to remove any duplicated data within sql 
 
@@ -149,7 +147,6 @@ rating_count
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/JOIN%20CLEAN%20AND%20PQ%201.png)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/JOIN%20CLEAN%20AND%20PQ%202.png)
-(insert snippet Join pq and clean 1&2)
 
 # Create the final table 
 
@@ -162,7 +159,6 @@ After importing the data there seems to be erroneous data for the pricing of the
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/conversion%201.png?raw=true)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/conversion%202.png?raw=true)
 
-(insert rupees price)
 
 This is because the dataset was downloaded using rupees as currency and therefore I need to convert it to domestic
 currency, GBP, in order for it to make sense. 
@@ -175,7 +171,6 @@ to write the conversion and drag the formula down to apply it for all rows
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/convertingColumn1.png)
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/convertingColumn2.png)
-(insert converting column 1&2)
 
 # Creating pivot tables
 
