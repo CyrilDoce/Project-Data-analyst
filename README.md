@@ -1,6 +1,6 @@
 # Project-Data-analyst
 
-# Cleaning using Excel (Data Cleaning - Excel and SQL server.xlsx) :
+# Cleaning the data (see RAW AMAZON DATA.csv) using Excel (see Data Cleaning - Excel and SQL server.xlsx) :
 
 # Check for duplicated values
 Highlight the entire table and hover over data at the top and click "remove duplicates" under the data tools 
@@ -64,7 +64,6 @@ This will lead into multiple instances of user_id, review_id and user_name colum
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%205.png)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%206.png)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%207.png)
-/
 # How unpivotting works
 
 Within a table are attributes (columns) and values (multiple rows). Unpivotting allows for the attributes to be stored in a singular column with the values also stored in a singular column corresponding to eachother. This may be useful in instances where there are too many of similar columns being referenced in a table, which may be better to store as rows. For example, user_id.1, user_id.2,user_id.3 etc would be better stored as one singular column: user_id. 
