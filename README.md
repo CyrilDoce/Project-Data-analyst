@@ -44,7 +44,7 @@ These columns are slightly complicated as there are multiple user_names and revi
 column. As a result this isn't a normalised data set that can be used for later querying within SQL, therefore
 I have to split the usernames within each of their own product ids and review_id rows.
 
-# Data transformation using Power query:
+# Data transformation using Power query (see Data transformation - Power query.xlsx):
 
 By using excels power query I will break down the rows within the columns such that they are all individually part of their own respective product id and normalised. Right now there are multiple values within user_name, user_id and review_id.
 
