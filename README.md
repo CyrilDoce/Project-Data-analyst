@@ -54,7 +54,7 @@ Next I will remove unnecessary columns that don't require breaking down or trans
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%202.png)
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20transform%203.png)
 
-Next I will split the user_name, user_id and review_id columns via delimiter (delimiters are characters that separate words e.g , or . ) which will be the commas in this instance.
+Next I will split the user_name, user_id and review_id columns via delimiter (delimiters are characters that separate words e.g , or . ) which will be the commas in this instance. For instance, if I split via delimiter on "," then values "a,b,c" would be transformed into "a", "b" and "c" separating them into new columns
 
 ![Image Alt](https://github.com/CyrilDoce/Project-Data-analyst/blob/main/Images/PQ%20Transform%204.png)
 
