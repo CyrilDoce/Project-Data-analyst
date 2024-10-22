@@ -39,10 +39,9 @@ I will insert a new field "Check_discounted_price" in order to see if they accur
 
 This is to ensure the entire column is formatted as a value and not a formula of the actual price column
 
-# user_name and review_id 
-These columns are slightly complicated as there are multiple user_names and review_id values within their respective
-column. As a result this isn't a normalised data set that can be used for later querying within SQL, therefore
-I have to split the usernames within each of their own product ids and review_id rows.
+# user_name , user_id and review_id 
+These columns are slightly complicated as there are multiple user_names, user_id and review_id values within their respective
+row. As a result this isn't a normalised data set that can be used for later querying within SQL, therefore I have to split the rows within the user_name, user_id and review_id as separate values, performing a data transformation using Power query. To do this I will need to create a separate file named "Data transformation - Power query.xlsx" to ensure that the data transformation wont affect the other rows. 
 
 # Data transformation using Power query (see Data transformation - Power query.xlsx):
 
