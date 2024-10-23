@@ -65,6 +65,6 @@ from clean
 join pq on 
 	pq.product_id = clean.product_id
 
---Select the final table and check if both tables are finalised
+--Select the final table and check if the tale is finalised
 select *
 from FinalProductTable
