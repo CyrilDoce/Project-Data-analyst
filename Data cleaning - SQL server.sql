@@ -57,7 +57,6 @@ create table FinalProductTable (
 	review_id varchar(100)
 )
 
-drop table FinalProductTable
 
 insert into FinalProductTable
 select pq.product_id, clean.product_name, clean.category, clean.actual_price, clean.discount_percentage,
@@ -66,5 +65,6 @@ from clean
 join pq on 
 	pq.product_id = clean.product_id
 
+--Select the final table and check if both tables are finalised
 select *
 from FinalProductTable
