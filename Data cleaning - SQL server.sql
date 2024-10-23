@@ -1,3 +1,7 @@
+--This sql file was used when cleaning the following files in SQL server: "Data transformation - Power Query.xlsx" and "Data cleaning - Excel and SQL server.xlsx" .
+--Both are named "PQ" and "clean" respectively as tables within this file.
+--This file was used to clean both tables and join them finally to create the final product table in which data analysis and data visualisation would proceed.
+
 -- Select all the data from the "PQ" table
 
 select *
